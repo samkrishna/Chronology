@@ -48,6 +48,7 @@
 		6F753ECD212A7DBB00965F50 /* ClockImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753EA7212A7DBB00965F50 /* ClockImplementation.swift */; };
 		6F753ECE212A7DBB00965F50 /* Epoch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753EA8212A7DBB00965F50 /* Epoch.swift */; };
 		6F753ECF212A809A00965F50 /* Clock+CurrentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753EA5212A7DBB00965F50 /* Clock+CurrentValues.swift */; };
+		6F87B133212AE82F0025C167 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6F87B132212AE82F0025C167 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		6F753EA6212A7DBB00965F50 /* Clock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		6F753EA7212A7DBB00965F50 /* ClockImplementation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockImplementation.swift; sourceTree = "<group>"; };
 		6F753EA8212A7DBB00965F50 /* Epoch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Epoch.swift; sourceTree = "<group>"; };
+		6F87B132212AE82F0025C167 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		6F753DB4212A645300965F50 = {
 			isa = PBXGroup;
 			children = (
+				6F87B131212AE8150025C167 /* Markdown */,
 				6F753E7D212A7DBB00965F50 /* Chronology */,
 				6F753DC0212A645300965F50 /* Supporting Files */,
 				6F753DCB212A645300965F50 /* ChronologyTests */,
@@ -250,6 +253,14 @@
 			path = Clock;
 			sourceTree = "<group>";
 		};
+		6F87B131212AE8150025C167 /* Markdown */ = {
+			isa = PBXGroup;
+			children = (
+				6F87B132212AE82F0025C167 /* README.md */,
+			);
+			path = Markdown;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -341,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F87B133212AE82F0025C167 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
