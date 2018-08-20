@@ -8,3 +8,5 @@ For more information, please see the wiki:
 - [Inspiration](https://github.com/davedelong/chronology/wiki/Inspiration)
 - [Goals](https://github.com/davedelong/chronology/wiki/Goals)
 - [Implementation](https://github.com/davedelong/chronology/wiki/Implementation)
+
+*NOTE:* For Xcode users, the 'xcode-branch' provides all the Xcode support to get going.
