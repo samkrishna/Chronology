@@ -8,12 +8,12 @@
 import Foundation
 
 public protocol Anchored: CalendarValue {
-    var range: ClosedRange<Instant> { get }
+    var range: ClosedRange<Moment> { get }
 }
 
 extension Anchored {
     
-    public var range: ClosedRange<Instant> {
+    public var range: ClosedRange<Moment> {
         let date = calendar.date(from: dateComponents).unwrap("Anchored values must always be convertible to a concrete NSDate")
         let unit = type(of: self).smallestRepresentedComponent
         
@@ -22,12 +22,12 @@ extension Anchored {
         let succeeded = calendar.dateInterval(of: unit, start: &start, interval: &length, for: date)
         require(succeeded, "We should always be able to get the range of a calendar component")
         
-        let startInsant = Instant(date: start)
-        let endInstant = Instant(date: start.addingTimeInterval(length))
-        return startInsant...endInstant
+        let startInsant = Moment(date: start)
+        let endMoment = Moment(date: start.addingTimeInterval(length))
+        return startInsant...endMoment
     }
     
-    internal var approximateMidPoint: Instant {
+    internal var approximateMidPoint: Moment {
         let r = self.range
         let lower = r.lowerBound
         let upper = r.upperBound.converting(to: lower.epoch)

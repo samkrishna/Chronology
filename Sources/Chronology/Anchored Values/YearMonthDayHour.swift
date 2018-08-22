@@ -19,11 +19,11 @@ public struct YearMonthDayHour: Anchored, YearMonthDayHourFields {
     }
     
     public func firstMinute() -> YearMonthDayHourMinute {
-        return YearMonthDayHourMinute(instant: range.lowerBound, region: region)
+        return YearMonthDayHourMinute(moment: range.lowerBound, region: region)
     }
     
     public func lastMinute() -> YearMonthDayHourMinute {
-        return YearMonthDayHourMinute(instant: range.upperBound, region: region)
+        return YearMonthDayHourMinute(moment: range.upperBound, region: region)
     }
     
     public func nthMinute(_ ordinal: Int) throws -> YearMonthDayHourMinute {

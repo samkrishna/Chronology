@@ -24,7 +24,7 @@
 		6F753EB4212A7DBB00965F50 /* YearMonthDayHourMinuteSecondNanosecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E8B212A7DBB00965F50 /* YearMonthDayHourMinuteSecondNanosecond.swift */; };
 		6F753EB5212A7DBB00965F50 /* YearMonthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E8C212A7DBB00965F50 /* YearMonthDay.swift */; };
 		6F753EB6212A7DBB00965F50 /* Era.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E8D212A7DBB00965F50 /* Era.swift */; };
-		6F753EB7212A7DBB00965F50 /* Instant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E8E212A7DBB00965F50 /* Instant.swift */; };
+		6F753EB7212A7DBB00965F50 /* Moment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E8E212A7DBB00965F50 /* Moment.swift */; };
 		6F753EB8212A7DBB00965F50 /* DateComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E8F212A7DBB00965F50 /* DateComponents.swift */; };
 		6F753EB9212A7DBB00965F50 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E90212A7DBB00965F50 /* Assertions.swift */; };
 		6F753EBA212A7DBB00965F50 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F753E91212A7DBB00965F50 /* Region.swift */; };
@@ -82,7 +82,7 @@
 		6F753E8B212A7DBB00965F50 /* YearMonthDayHourMinuteSecondNanosecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMonthDayHourMinuteSecondNanosecond.swift; sourceTree = "<group>"; };
 		6F753E8C212A7DBB00965F50 /* YearMonthDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearMonthDay.swift; sourceTree = "<group>"; };
 		6F753E8D212A7DBB00965F50 /* Era.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Era.swift; sourceTree = "<group>"; };
-		6F753E8E212A7DBB00965F50 /* Instant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instant.swift; sourceTree = "<group>"; };
+		6F753E8E212A7DBB00965F50 /* Moment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moment.swift; sourceTree = "<group>"; };
 		6F753E8F212A7DBB00965F50 /* DateComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateComponents.swift; sourceTree = "<group>"; };
 		6F753E90212A7DBB00965F50 /* Assertions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		6F753E91212A7DBB00965F50 /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				6F753E7E212A7DBB00965F50 /* SISeconds.swift */,
 				6F753E7F212A7DBB00965F50 /* Adjustment */,
 				6F753E85212A7DBB00965F50 /* Anchored Values */,
-				6F753E8E212A7DBB00965F50 /* Instant.swift */,
+				6F753E8E212A7DBB00965F50 /* Moment.swift */,
 				6F753E8F212A7DBB00965F50 /* DateComponents.swift */,
 				6F753E90212A7DBB00965F50 /* Assertions.swift */,
 				6F753E91212A7DBB00965F50 /* Region.swift */,
@@ -393,7 +393,7 @@
 				6F753ECE212A7DBB00965F50 /* Epoch.swift in Sources */,
 				6F753EB0212A7DBB00965F50 /* YearMonthDayHourMinute.swift in Sources */,
 				6F753EBF212A7DBB00965F50 /* FloatingFormatting-3Units.swift in Sources */,
-				6F753EB7212A7DBB00965F50 /* Instant.swift in Sources */,
+				6F753EB7212A7DBB00965F50 /* Moment.swift in Sources */,
 				6F753EC7212A7DBB00965F50 /* FloatingValue-3Units.swift in Sources */,
 				6F753EC3212A7DBB00965F50 /* FloatingValue-Others.swift in Sources */,
 				6F753EB2212A7DBB00965F50 /* YearMonthDayHourMinuteSecond.swift in Sources */,

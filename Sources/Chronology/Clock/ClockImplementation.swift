@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal extension Instant {
+internal extension Moment {
     init() {
         let now = Foundation.Date.timeIntervalSinceReferenceDate
         self.init(interval: SISeconds(now), since: .reference)
@@ -16,34 +16,34 @@ internal extension Instant {
 
 internal protocol ClockImplementation {
     var SISecondsPerCalendarSecond: Double { get }
-    func now() -> Instant
+    func now() -> Moment
     
 }
 
 internal struct SystemClock: ClockImplementation {
     let SISecondsPerCalendarSecond: Double = 1.0
-    func now() -> Instant { return Instant() }
+    func now() -> Moment { return Moment() }
 }
 
 internal struct CustomClock: ClockImplementation {
     
-    let absoluteStart = Instant()
-    let clockStart: Instant
+    let absoluteStart = Moment()
+    let clockStart: Moment
     let rate: Double
     let calendar: Calendar
     var SISecondsPerCalendarSecond: Double { return calendar.SISecondsPerSecond }
     
     private let actualRate: Double
     
-    init(referenceInstant: Instant, rate: Double, calendar: Calendar) {
-        self.clockStart = referenceInstant
+    init(referenceMoment: Moment, rate: Double, calendar: Calendar) {
+        self.clockStart = referenceMoment
         self.calendar = calendar
         self.rate = rate
         self.actualRate = rate * calendar.SISecondsPerSecond
     }
     
-    func now() -> Instant {
-        let absoluteNow = Instant()
+    func now() -> Moment {
+        let absoluteNow = Moment()
         let elapsedTime = absoluteNow - absoluteStart
         let scaledElapsedTime = elapsedTime * actualRate
         return clockStart + scaledElapsedTime
@@ -62,7 +62,7 @@ internal struct OffsetClock: ClockImplementation {
         self.offset = offset
     }
     
-    func now() -> Instant {
+    func now() -> Moment {
         let scaled = offset * SISecondsPerCalendarSecond
         return base.now() + SISeconds(scaled)
     }

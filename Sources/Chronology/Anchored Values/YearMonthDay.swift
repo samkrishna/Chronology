@@ -19,11 +19,11 @@ public struct YearMonthDay: Anchored, YearMonthDayFields {
     }
     
     public func firstHour() -> YearMonthDayHour {
-        return YearMonthDayHour(instant: range.lowerBound, region: region)
+        return YearMonthDayHour(moment: range.lowerBound, region: region)
     }
     
     public func lastHour() -> YearMonthDayHour {
-        return YearMonthDayHour(instant: range.upperBound, region: region)
+        return YearMonthDayHour(moment: range.upperBound, region: region)
     }
     
     public func nthHour(_ ordinal: Int) throws -> YearMonthDayHour {

@@ -44,16 +44,16 @@ public struct Clock {
     /// Create a clock with a custom start time and flow rate
     ///
     /// - Parameters:
-    ///   - referenceDate: The instanteous "now" from which the clock will start counting
+    ///   - referenceDate: The moment "now" from which the clock will start counting
     ///   - rate: The rate at which time progresses in the clock, relative to the supplied calendar.
     ///           1.0 (the default) means one second on the system clock correlates to a second passing in the clock.
     ///           2.0 would mean that every second elapsing on the system clock would be 2 seconds on this clock (ie, time progresses twice as fast)
-    ///   - timeZone: The TimeZone in which instants are produced
+    ///   - timeZone: The TimeZone in which moments are produced
     ///   - calendar: The Calendar relative to which the rate is calculated
-    public init(startingFrom referenceInstant: Instant, rate: Double = 1.0, region: Region = .autoupdatingCurrent) {
+    public init(startingFrom referenceMoment: Moment, rate: Double = 1.0, region: Region = .autoupdatingCurrent) {
         guard rate > 0.0 else { fatalError("Clocks can only count forwards") }
         
-        let implementation = CustomClock(referenceInstant: referenceInstant, rate: rate, calendar: region.calendar)
+        let implementation = CustomClock(referenceMoment: referenceMoment, rate: rate, calendar: region.calendar)
         self.init(implementation: implementation, region: region)
     }
     
@@ -61,21 +61,21 @@ public struct Clock {
     /// Create a clock with a custom start time and flow rate
     ///
     /// - Parameters:
-    ///   - referenceEpoch: The instanteous "now" from which the clock will start counting
+    ///   - referenceEpoch: The moment "now" from which the clock will start counting
     ///   - rate: The rate at which time progresses in the clock.
     ///           1.0 (the default) means one second on the system clock correlates to a second passing in the clock.
     ///           2.0 would mean that every second elapsing on the system clock would be 2 seconds on this clock (ie, time progresses twice as fast)
-    ///   - timeZone: The TimeZone in which instants are produced
+    ///   - timeZone: The TimeZone in which moments are produced
     public init(startingFrom referenceEpoch: Epoch, rate: Double = 1.0, region: Region = .autoupdatingCurrent) {
-        let referenceInstant = Instant(interval: 0, since: referenceEpoch)
-        self.init(startingFrom: referenceInstant, rate: rate, region: region)
+        let referenceMoment = Moment(interval: 0, since: referenceEpoch)
+        self.init(startingFrom: referenceMoment, rate: rate, region: region)
     }
     
     
-    /// Retrieve the current instant
+    /// Retrieve the current moment
     ///
-    /// - Returns: An `Instant` representing the current time on the clock.
-    public func thisInstant() -> Instant {
+    /// - Returns: A `Moment` representing the current time on the clock.
+    public func thisMoment() -> Moment {
         return impl.now()
     }
     

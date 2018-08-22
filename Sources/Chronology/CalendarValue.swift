@@ -32,8 +32,8 @@ public extension CalendarValue {
         self.init(region: region, dateComponents: dc.requireAndRestrict(to: Self.representedComponents))
     }
     
-    internal init(instant: Instant, region: Region) {
-        self.init(date: instant.date, region: region)
+    internal init(moment: Moment, region: Region) {
+        self.init(date: moment.date, region: region)
     }
     
     public func convert(to region: Region) -> Self {

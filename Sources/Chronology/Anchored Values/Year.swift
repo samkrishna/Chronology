@@ -19,11 +19,11 @@ public struct Year: Anchored, YearFields {
     }
     
     public func firstMonth() -> YearMonth {
-        return YearMonth(instant: range.lowerBound, region: region)
+        return YearMonth(moment: range.lowerBound, region: region)
     }
     
     public func lastMonth() -> YearMonth {
-        return YearMonth(instant: range.upperBound, region: region)
+        return YearMonth(moment: range.upperBound, region: region)
     }
     
     public func nthMonth(_ ordinal: Int) throws -> YearMonth {
