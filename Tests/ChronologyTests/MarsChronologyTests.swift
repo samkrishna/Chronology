@@ -1,33 +1,23 @@
-//
-//  MarsChronologyTests.swift
-//  ChronologyTests
-//
-//  Created by Sam Krishna on 8/22/18.
-//  Copyright © 2018 Sam Krishna. All rights reserved.
-//
-
 import XCTest
+@testable import Chronology
 
 class MarsChronologyTests: XCTestCase {
+    public var marsCalendar : Calendar! = Calendar(identifier: .gregorian)
+    let SISecondsPerEarthDay : Double = 86400.0
+    let MarsSISecondsPerSolarDay : Double = 88775.24
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Using Mars solar day of 24h 39m 35.24s (88,775.24 SI seconds) as basis for creating test cases.
+        marsCalendar.SISecondsPerSecond = MarsSISecondsPerSolarDay / SISecondsPerEarthDay
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMarsSecondToSISecond() {
+        let result = MarsSISecondsPerSolarDay / SISecondsPerEarthDay
+        XCTAssertNotNil(marsCalendar)
+        XCTAssert(marsCalendar.SISecondsPerSecond == result)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
