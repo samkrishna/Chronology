@@ -18,8 +18,22 @@ public extension Calendar {
     /// SI Seconds are in each calendar-second.
     /// note: This does NOT affect how physics calculations are done (or velocities, etc)
     /// because those are all defined relative to SI Seconds
-    public var SISecondsPerSecond: Double { return 1.0 }
-    
+    private struct Container {
+        static var _SISecondsPerSecond = [String:Double]()
+    }
+
+    public var SISecondsPerSecond : Double {
+        get {
+            let tmpAddress = String(format: "%p", self.hashValue)
+            return Container._SISecondsPerSecond[tmpAddress] ?? 1.0
+        }
+        set {
+            let tmpAddress = String(format: "%p", self.hashValue)
+            if Container._SISecondsPerSecond[tmpAddress] == nil {
+                Container._SISecondsPerSecond[tmpAddress] = newValue
+            }
+        }
+    }
 }
 
 
