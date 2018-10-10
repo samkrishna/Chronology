@@ -9,6 +9,10 @@ import Foundation
 
 public extension Calendar {
     
+    private struct Container {
+        static var _SISecondsPerSecond = [String:Double]()
+    }
+
     /// Different calendars may have different definitions of what a "second" is.
     /// For example, on Earth, calendars all have the convention that one calendar-second
     /// is the same as one SI Second. However, on Mars, the days are slightly longer,
@@ -18,10 +22,8 @@ public extension Calendar {
     /// SI Seconds are in each calendar-second.
     /// note: This does NOT affect how physics calculations are done (or velocities, etc)
     /// because those are all defined relative to SI Seconds
-    private struct Container {
-        static var _SISecondsPerSecond = [String:Double]()
-    }
-
+    ///
+    /// NOTE: You can only 'set' `SISecondsPerSecond` **ONCE**. After that, an assertion will raise.
     public var SISecondsPerSecond : Double {
         get {
             let tmpAddress = String(format: "%p", self.hashValue)
@@ -29,9 +31,11 @@ public extension Calendar {
         }
         set {
             let tmpAddress = String(format: "%p", self.hashValue)
-            if Container._SISecondsPerSecond[tmpAddress] == nil {
-                Container._SISecondsPerSecond[tmpAddress] = newValue
-            }
+
+            // If Apple had gotten around to adding error handling for computed properties,
+            // this assertion wouldn't be necessary
+            assert(Container._SISecondsPerSecond[tmpAddress] == nil)
+            Container._SISecondsPerSecond[tmpAddress] = newValue
         }
     }
 }
